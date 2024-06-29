@@ -11,9 +11,10 @@ import {
 import React from "react-native"
 
 import *as Animatable from 'react-native-animatable'
-
+import {useNavigation} from '@react-navigation/native'
 
 export default function Telalogin(){
+const navigator = useNavigation();
     return(
         <View style={style.container}> 
             <Animatable.View  animation='fadeInLeft' delay={500} style={style.containerHeader}> 
@@ -37,7 +38,10 @@ export default function Telalogin(){
                     <Text style={style.textbutton}>Acessar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={style.regisButton}>
+                <TouchableOpacity style={style.regisButton}
+                onPress={() => navigator.navigate('TelaCadastro')}
+                
+                >
                     <Text style={style.textregistre}>Cadastre-se</Text>
                 </TouchableOpacity>
             </Animatable.View>
