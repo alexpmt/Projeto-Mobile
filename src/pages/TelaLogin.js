@@ -24,18 +24,18 @@ const navigator = useNavigation();
             <Animatable.View  animation='fadeInUp' style={style.containerForm}>
                 <Text style={style.Title}>Email</Text>
                 <TextInput
-                placeholder="Digite um email.."
+                placeholder="Insira seu email"
                 style={style.input}
                 /> 
 
                  <Text style={style.Title}>Senha</Text>
                 <TextInput
-                placeholder="Digite sua senha.."
+                placeholder="Insira sua senha"
                 style={style.input}
                 /> 
 
                 <TouchableOpacity style={style.button}>
-                    <Text style={style.textbutton}>Acessar</Text>
+                    <Text style={style.textbutton}>Login</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.regisButton}
