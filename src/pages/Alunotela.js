@@ -1,48 +1,53 @@
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 
-export default function DashboardProfessor() {
+export default function DashboardAluno() {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Dashboard do Professor</Text>
+        <Text style={styles.headerTitle}>Dashboard do Aluno</Text>
         <View style={styles.nav}>
-          <TouchableOpacity onPress={() => {}} style={styles.navItem}>
-            <Text style={styles.navItemText}>Criar Atividade</Text>
+          <TouchableOpacity style={styles.navItem}>
+            <Text style={styles.navText}>Atividades</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}} style={styles.navItem}>
-            <Text style={styles.navItemText}>Atividades</Text>
+          <TouchableOpacity style={styles.navItem}>
+            <Text style={styles.navText}>Enviar Respostas</Text>
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.main}>
+      <ScrollView style={styles.main}>
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Criar Atividade</Text>
-          <View style={styles.form}>
-            <Text style={styles.label}>Título da Atividade:</Text>
-            <TextInput style={styles.input} placeholder="Digite o título" />
-            <Text style={styles.label}>Descrição:</Text>
-            <TextInput style={styles.textarea} placeholder="Digite a descrição" multiline={true} />
-            <Button title="Criar" onPress={() => {}} color="#4CAF50" />
-          </View>
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Atividades Criadas</Text>
+          <Text style={styles.sectionTitle}>Atividades</Text>
           <View style={styles.atividade}>
             <Text style={styles.atividadeTitle}>Atividade 1</Text>
-            <Text style={styles.atividadeDescricao}>Descrição da atividade 1.</Text>
+            <Text style={styles.atividadeDescription}>Descrição da atividade 1.</Text>
           </View>
           <View style={styles.atividade}>
             <Text style={styles.atividadeTitle}>Atividade 2</Text>
-            <Text style={styles.atividadeDescricao}>Descrição da atividade 2.</Text>
+            <Text style={styles.atividadeDescription}>Descrição da atividade 2.</Text>
           </View>
           {/* Adicione mais atividades conforme necessário */}
         </View>
-      </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Enviar Respostas</Text>
+          <View style={styles.form}>
+            <Text style={styles.label}>Escolha a atividade:</Text>
+            <View style={styles.input}>
+              <Text>Atividade 1</Text>
+            </View>
+            <View style={styles.input}>
+              <Text>Atividade 2</Text>
+            </View>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Enviar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ScrollView>
       <View style={styles.footer}>
         <Text style={styles.footerText}>&copy; 2024 Agenda Virtual</Text>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -57,8 +62,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    color: '#fff',
-    fontSize: 24,
+    color: 'white',
+    fontSize: 20,
     fontWeight: 'bold',
   },
   nav: {
@@ -66,26 +71,37 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   navItem: {
-    marginRight: 10,
+    marginHorizontal: 10,
   },
-  navItemText: {
-    color: '#fff',
+  navText: {
+    color: 'white',
     fontWeight: 'bold',
   },
   main: {
     padding: 20,
   },
   section: {
-    marginBottom: 20,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     padding: 20,
     borderRadius: 5,
+    marginBottom: 20,
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
   },
   sectionTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 15,
+  },
+  atividade: {
+    marginBottom: 15,
+  },
+  atividadeTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  atividadeDescription: {
+    fontSize: 14,
+    color: '#555',
   },
   form: {
     flexDirection: 'column',
@@ -94,37 +110,32 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   input: {
-    height: 40,
-    borderColor: '#ddd',
     borderWidth: 1,
-    marginBottom: 15,
-    paddingHorizontal: 10,
-    borderRadius: 5,
-  },
-  textarea: {
-    height: 80,
     borderColor: '#ddd',
-    borderWidth: 1,
-    marginBottom: 15,
-    paddingHorizontal: 10,
     borderRadius: 5,
-  },
-  atividade: {
+    padding: 10,
     marginBottom: 15,
   },
-  atividadeTitle: {
-    fontSize: 18,
+  button: {
+    backgroundColor: '#4CAF50',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
     fontWeight: 'bold',
-  },
-  atividadeDescricao: {
-    fontSize: 16,
   },
   footer: {
     backgroundColor: '#4CAF50',
     padding: 10,
     alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
   },
   footerText: {
-    color: '#fff',
+    color: 'white',
   },
 });
