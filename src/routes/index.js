@@ -2,7 +2,7 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Bemvindo from "../pages/Inicia"
 import Telalogin from "../pages/TelaLogin"
 import Cadastro from "../pages/CadastroTela";
-import DashboardProfessor from "../pages/professor";
+import DashboardProfessor from "../pages/TelaProfessor";
 import DashboardAluno from "../pages/Alunotela";
 const Stack = createNativeStackNavigator();
 
