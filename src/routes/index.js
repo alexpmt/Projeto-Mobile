@@ -2,7 +2,8 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Bemvindo from "../pages/Inicia"
 import Telalogin from "../pages/TelaLogin"
 import Cadastro from "../pages/CadastroTela";
-
+import DashboardProfessor from "../pages/TelaProfessor";
+import DashboardAluno from "../pages/Alunotela";
 const Stack = createNativeStackNavigator();
 
 export default function Routes(){
@@ -29,6 +30,23 @@ export default function Routes(){
             name="TelaCadastro"
             component={Cadastro}
             options={{headerShown:false}}
+            
+            />
+
+            
+            <Stack.Screen
+            name="DashboardProfessor"
+            component={DashboardProfessor}
+            options={{ headerShown: false }} 
+            
+            
+            
+            />
+
+            <Stack.Screen
+            name="DashboardAluno"
+            component={DashboardAluno}
+            options={{ headerShown: false }} 
             
             />
         </Stack.Navigator>
